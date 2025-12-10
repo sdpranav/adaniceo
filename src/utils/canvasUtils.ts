@@ -9,26 +9,16 @@ export const loadImage = (src: string): Promise<HTMLImageElement> => {
 }
 
 // Consolidated draw function
-export const drawOnCanvas = async (
-    canvas: HTMLCanvasElement,
-    imageFile: File,
-    ringSrc?: string
+export const drawComposedImage = (
+    ctx: CanvasRenderingContext2D,
+    baseImage: HTMLImageElement,
+    ringImage: HTMLImageElement | null,
+    size: number,
+    offset: { x: number, y: number },
+    scale: number
 ) => {
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    // Load images
-    const baseImage = await loadImage(URL.createObjectURL(imageFile))
-
-    let ringImage: HTMLImageElement | null = null
-    if (ringSrc) {
-        ringImage = await loadImage(ringSrc)
-    }
-
-    // Determine size based on smaller dimension (Square Canvas)
-    const size = Math.min(baseImage.width, baseImage.height)
-    canvas.width = size
-    canvas.height = size
+    // Clear canvas
+    ctx.clearRect(0, 0, size, size)
 
     // Content Scaling Factor to ensure image sits INSIDE the ring
     const CONTENT_SCALE = 0.95
@@ -41,22 +31,33 @@ export const drawOnCanvas = async (
     ctx.closePath()
     ctx.clip()
 
-    // 2. Draw Base Image (Center Crop)
-    // We scale the image to cover the full canvas size to ensure it fills the mask completely
-    // The mask will do the trimming.
-    const scale = Math.max(size / baseImage.width, size / baseImage.height)
-    const scaledWidth = baseImage.width * scale
-    const scaledHeight = baseImage.height * scale
-    const x = (size - scaledWidth) / 2
-    const y = (size - scaledHeight) / 2
+    // 2. Draw Base Image with Offset
+    const imgWidth = baseImage.width * scale
+    const imgHeight = baseImage.height * scale
 
-    ctx.drawImage(baseImage, x, y, scaledWidth, scaledHeight)
+    // Center center + offset
+    const centerX = size / 2
+    const centerY = size / 2
+
+    // Draw centered relative to the canvas center, plus user offset
+    // image center is at (x + width/2, y + height/2)
+    // we want image center to be at (centerX + offsetX, centerY + offsetY)
+    // so x = centerX + offsetX - width/2
+    const x = centerX + offset.x - imgWidth / 2
+    const y = centerY + offset.y - imgHeight / 2
+
+    ctx.drawImage(baseImage, x, y, imgWidth, imgHeight)
     ctx.restore() // Remove clip for subsequent overlays
 
     // 3. Draw Ring Overlay (if available) - Draws at full size 1.0
     if (ringImage) {
         ctx.drawImage(ringImage, 0, 0, size, size)
     }
+}
+
+export const getInitialScale = (containerSize: number, imageWidth: number, imageHeight: number): number => {
+    // Calculate scale to cover the container (like object-fit: cover)
+    return Math.max(containerSize / imageWidth, containerSize / imageHeight)
 }
 
 export const downloadCanvas = (canvas: HTMLCanvasElement, filename: string) => {
