@@ -73,14 +73,14 @@ function App() {
         </p>
       </header>
 
-      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-24 md:pb-0 md:py-12 md:mt-12">
+      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 md:mt-12">
         {!image ? (
-          <div className="flex flex-col items-center justify-center gap-8 md:gap-12 w-full max-w-sm md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 h-full">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 h-full">
 
             {/* 3:4 Hero Card Container - Width-Based Scaling */}
-            {/* Switched to width-based sizing to prevent shrinking on small vertical screens */}
+            {/* Mobile: Full width minus 24px margins (mx-6 = 24px per side) */}
             <TiltCard
-              className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[3/4] shrink-0"
+              className="relative w-full mx-6 md:mx-0 max-w-[calc(100%-48px)] md:max-w-[360px] aspect-[3/4] shrink-1 md:shrink-0"
               tiltClassName="bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl flex items-center justify-center p-6 overflow-hidden"
             >
 
@@ -116,8 +116,8 @@ function App() {
             </TiltCard>
 
             {/* Upload Button */}
-            <div className="fixed bottom-12 left-0 right-0 px-4 md:static md:p-0 flex justify-center z-50">
-              <div className="w-full max-w-[320px] md:max-w-[360px] relative group shrink-0">
+            <div className="fixed bottom-12 left-0 right-0 px-6 md:static md:p-0 md:w-full flex justify-center z-50">
+              <div className="w-full md:max-w-[360px] relative group shrink-0">
                 <input
                   type="file"
                   accept="image/*"
