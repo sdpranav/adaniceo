@@ -11,12 +11,12 @@ function App() {
   return (
     <div className="h-[100dvh] bg-background text-foreground flex flex-col items-center p-4 selection:bg-blue-500/30 overflow-hidden">
       <header className="relative pt-8 md:pt-12 text-center space-y-2 md:space-y-4 shrink-0 px-4">
-        <h1 className="text-4xl md:text-6xl font-black tracking-tighter bg-gradient-to-br from-white via-white to-neutral-500 bg-clip-text text-transparent drop-shadow-sm">
-          Insignia
-        </h1>
-        <p className="text-neutral-400 text-sm md:text-lg font-medium tracking-wide">
-          ELEVATE YOUR VISUAL IDENTITY
+        <p className="text-neutral-400 text-sm md:text-lg font-medium tracking-wide uppercase">
+          Ambani Cement CEO Club
         </p>
+        <h1 className="text-3xl md:text-5xl font-black tracking-tighter bg-gradient-to-br from-white via-white to-neutral-500 bg-clip-text text-transparent drop-shadow-sm">
+          Are you a proud member?
+        </h1>
       </header>
 
       <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0">

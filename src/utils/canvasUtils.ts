@@ -1,17 +1,3 @@
-export interface Dimensions {
-    width: number
-    height: number
-}
-
-// Common social media aspect ratios
-export const ASPECT_RATIOS = [
-    { label: 'Original', ratio: 0 },
-    { label: 'Square (1:1)', ratio: 1 },
-    { label: 'Portrait (4:5)', ratio: 4 / 5 },
-    { label: 'Story (9:16)', ratio: 9 / 16 },
-    { label: 'Landscape (1.91:1)', ratio: 1.91 / 1 },
-]
-
 export const loadImage = (src: string): Promise<HTMLImageElement> => {
     return new Promise((resolve, reject) => {
         const img = new Image()
@@ -26,8 +12,6 @@ export const loadImage = (src: string): Promise<HTMLImageElement> => {
 export const drawOnCanvas = async (
     canvas: HTMLCanvasElement,
     imageFile: File,
-    _logoSrc: string, // Kept for compatibility but unused
-    _aspectRatio: number = 1, // Kept for compatibility but unused
     ringSrc?: string
 ) => {
     const ctx = canvas.getContext('2d')
@@ -35,7 +19,6 @@ export const drawOnCanvas = async (
 
     // Load images
     const baseImage = await loadImage(URL.createObjectURL(imageFile))
-    // Logo load removed
 
     let ringImage: HTMLImageElement | null = null
     if (ringSrc) {
@@ -74,8 +57,6 @@ export const drawOnCanvas = async (
     if (ringImage) {
         ctx.drawImage(ringImage, 0, 0, size, size)
     }
-
-    // 4. Logo drawing removed
 }
 
 export const downloadCanvas = (canvas: HTMLCanvasElement, filename: string) => {

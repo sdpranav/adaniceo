@@ -26,7 +26,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
         setLoading(true)
         try {
-            await drawOnCanvas(canvas, file, "", 1, ringPath)
+            await drawOnCanvas(canvas, file, ringPath)
         } catch (error) {
             console.error("Failed to generate image:", error)
         } finally {
