@@ -78,9 +78,9 @@ function App() {
           <div className="flex flex-col items-center justify-center gap-6 md:gap-12 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 h-full">
 
             {/* 3:4 Hero Card Container - Width-Based Scaling */}
-            {/* Mobile: Full width minus 24px margins (mx-6 = 24px per side) */}
+            {/* Mobile: Width calc(100% - 48px) capped at 320px. Desktop: max 360px */}
             <TiltCard
-              className="relative w-full mx-6 md:mx-0 max-w-[calc(100%-48px)] md:max-w-[360px] aspect-[3/4] shrink-1 md:shrink-0"
+              className="relative w-[calc(100%-48px)] max-w-[320px] md:w-full md:max-w-[360px] aspect-[3/4] shrink-1 md:shrink-0"
               tiltClassName="bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl flex items-center justify-center p-6 overflow-hidden"
             >
 
