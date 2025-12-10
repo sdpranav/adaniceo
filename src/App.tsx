@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#160C1D] text-foreground flex flex-col items-center p-4 py-8 md:py-12 selection:bg-blue-500/30 overflow-x-hidden relative">
+    <div className="h-[100dvh] md:h-auto md:min-h-screen bg-[#160C1D] text-foreground flex flex-col items-center md:p-4 md:py-12 selection:bg-blue-500/30 overflow-hidden md:overflow-visible overflow-x-hidden relative">
 
       {/* Logos Bar - Fixed/Sticky */}
       <div
@@ -33,14 +33,17 @@ function App() {
           "fixed top-0 inset-x-0 z-50 p-4 md:p-2 flex justify-between items-start transition-all duration-300",
           // Always present border to prevent layout shift (flicker)
           "border-b border-transparent",
-          // Mobile: Add blur and visibility on scroll
+          // Mobile: Add blur and visibility on scroll (though scroll is disabled on mobile now)
+          // We can keep it or simplify. Since mobile is no-scroll, this might not trigger on body scroll, 
+          // but we'll leave logic for desktop or potential inner content. 
+          // Actually, for 100vh app-like feel, header usually sits on top.
           isScrolled
             ? "bg-[#160C1D]/80 backdrop-blur-md border-white/5"
             : "",
           // Desktop: Reset styles (no border/blur needed)
           "md:bg-transparent md:backdrop-blur-none md:border-none",
           // Base interaction
-          "pointer-events-none" // Content itself (images) will need pointer-events-auto if interactive, but here they are just display
+          "pointer-events-none"
         )}
       >
         {/* Left: Ambuja | ACC */}
@@ -55,7 +58,8 @@ function App() {
           <img src={adaniLogo} alt="Adani Cement" className="h-10 md:h-16 object-contain opacity-90" />
         </div>
       </div>
-      <header className="relative pt-20 md:pt-24 text-center space-y-4 shrink-0 px-4 z-20 max-w-2xl">
+
+      <header className="relative pt-24 md:pt-24 text-center space-y-4 shrink-0 px-4 z-20 max-w-2xl">
         <div className="space-y-0.5">
           {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
             ADANI CEMENT CEO CLUB MEMBER
@@ -69,7 +73,7 @@ function App() {
         </p>
       </header>
 
-      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 py-8 md:py-12 mt-8 md:mt-12">
+      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-24 md:pb-0 md:py-12 md:mt-12">
         {!image ? (
           <div className="flex flex-col items-center justify-center gap-8 md:gap-12 w-full max-w-sm md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 h-full">
 
@@ -112,25 +116,27 @@ function App() {
             </TiltCard>
 
             {/* Upload Button */}
-            <div className="w-full max-w-[320px] md:max-w-[360px] relative group shrink-0">
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={(e) => {
-                  if (e.target.files?.[0]) {
-                    setImage(e.target.files[0])
-                  }
-                }}
-                id="image-upload"
-              />
-              <Button
-                as="label"
-                htmlFor="image-upload"
-              >
-                <Upload className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
-                <span className="font-semibold text-base md:text-lg">Upload Photo</span>
-              </Button>
+            <div className="fixed bottom-12 left-0 right-0 px-4 md:static md:p-0 flex justify-center z-50">
+              <div className="w-full max-w-[320px] md:max-w-[360px] relative group shrink-0">
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => {
+                    if (e.target.files?.[0]) {
+                      setImage(e.target.files[0])
+                    }
+                  }}
+                  id="image-upload"
+                />
+                <Button
+                  as="label"
+                  htmlFor="image-upload"
+                >
+                  <Upload className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
+                  <span className="font-semibold text-base md:text-lg">Upload Photo</span>
+                </Button>
+              </div>
             </div>
           </div>
         ) : (
