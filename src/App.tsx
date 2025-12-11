@@ -59,23 +59,24 @@ function App() {
         </div>
       </div>
 
-      <header className="relative pt-24 md:pt-24 [@media(max-height:740px)]:pt-20 text-center space-y-4 [@media(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
-        <div className="space-y-0.5">
-          {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
-            ADANI CEMENT CEO CLUB MEMBER
-          </p>*/}
-          <h1 className="text-2xl md:text-4xl [@media(max-height:740px)]:text-xl font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
-            ADANI CEMENT CEO CLUB MEMBER
-          </h1>
-        </div>
-        <p className="text-white/60 text-xs md:text-sm [@media(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
-          The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.
-        </p>
-      </header>
+      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 [@media(max-height:740px)]:pb-24">
 
-      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 md:mt-12 [@media(max-height:740px)]:pb-24">
+        <header className="relative pt-16 md:pt-16 [@media(max-height:740px)]:pt-16 pb-8 md:pb-8 [@media(max-height:740px)]:pb-4 text-center space-y-4 [@media(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
+          <div className="space-y-0.5">
+            {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
+              ADANI CEMENT CEO CLUB MEMBER
+            </p>*/}
+            <h1 className="text-2xl md:text-4xl [@media(max-height:740px)]:text-xl font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
+              ADANI CEMENT CEO CLUB MEMBER
+            </h1>
+          </div>
+          <p className="text-white/60 text-xs md:text-sm [@media(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
+            The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.
+          </p>
+        </header>
+
         {!image ? (
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 h-full">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
 
             {/* 3:4 Hero Card Container - Width-Based Scaling */}
             {/* Mobile: Width calc(100% - 48px) capped at 320px. Desktop: max 360px */}

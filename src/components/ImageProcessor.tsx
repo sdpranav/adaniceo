@@ -12,10 +12,6 @@ interface ImageProcessorProps {
     onReset: () => void
 }
 
-// Helper functions imported from canvasUtils
-
-
-
 export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const [loading, setLoading] = useState(false)
@@ -130,11 +126,11 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
     }
 
     return (
-        <div className="w-full flex flex-col items-center gap-8 animate-in fade-in slide-in-from-bottom-8 duration-500">
+        <div className="w-full flex flex-col items-center gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 animate-in fade-in slide-in-from-bottom-8 duration-500">
 
             {/* Main Preview Area */}
-            <div className="flex-1 flex items-center justify-center min-h-0 w-full p-4">
-                <div className="relative w-full max-w-[320px] aspect-square sm:max-w-[400px] md:max-w-[450px]">
+            <div className="flex-1 flex items-center justify-center min-h-0 w-full">
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-square sm:max-w-[400px] md:w-full md:max-w-[450px]">
                     <div
                         className="w-full h-full rounded-full overflow-hidden shadow-2xl border border-white/10 bg-black touch-none cursor-move"
                         onMouseDown={(e) => handleStart(e.clientX, e.clientY)}
@@ -163,25 +159,27 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
                     {/* Drag Hint - Now below the ring */}
                     {!loading && (
-                        <div className="mt-4 text-center animate-in fade-in duration-700">
+                        <div className="mt-4 [@media(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700">
                             <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-medium">Drag to Reposition</p>
                         </div>
                     )}
                 </div>
             </div>
 
-            {/* Controls Bar */}
-            <div className="flex flex-col items-center gap-4 w-full max-w-xs md:max-w-md">
-                <Button onClick={handleDownload}>
-                    <Download className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
-                    <span className="font-semibold text-base md:text-lg">Download Emblem</span>
-                </Button>
+            {/* Controls Bar - Fixed Bottom on Mobile, Static on Desktop */}
+            <div className="fixed bottom-12 [@media(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex flex-col items-center gap-3 z-50 transition-all">
+                <div className="w-full md:max-w-[360px] relative group shrink-0">
+                    <Button onClick={handleDownload} className="w-full">
+                        <Download className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
+                        <span className="font-semibold text-base md:text-lg">Download image</span>
+                    </Button>
+                </div>
 
                 <button
                     onClick={onReset}
-                    className="flex items-center gap-2 text-neutral-500 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                    className="flex items-center gap-2 text-white/40 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
                 >
-                    <RotateCcw className="w-4 h-4" />
+                    <RotateCcw className="w-3.5 h-3.5" />
                     <span>Reset</span>
                 </button>
             </div>
