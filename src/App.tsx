@@ -49,7 +49,7 @@ function App() {
         {/* Left: Ambuja | ACC */}
         <div className="flex items-center gap-2 md:gap-2 p-1">
           <img src={ambujaLogo} alt="Ambuja Cement" className="h-10 md:h-16 object-contain opacity-90" />
-          <div className="w-px h-8 bg-white/20"></div>
+          <div className="w-px h-8 bg-white"></div>
           <img src={accLogo} alt="ACC" className="h-10 md:h-16 object-contain opacity-90" />
         </div>
 
@@ -66,11 +66,11 @@ function App() {
             {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
               ADANI CEMENT CEO CLUB MEMBER
             </p>*/}
-            <h1 className="text-2xl md:text-4xl [@media(max-height:740px)]:text-xl font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
+            <h1 className="text-xl md:text-4xl [@media(max-height:740px)]:text-lg font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
               ADANI CEMENT CEO CLUB MEMBER
             </h1>
           </div>
-          <p className="text-white/60 text-xs md:text-sm [@media(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
+          <p className="text-white/80 text-sm md:text-md [@media(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
             The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.
           </p>
         </header>
@@ -88,7 +88,7 @@ function App() {
 
               {/* Bottom Badge Text */}
               <div className="absolute bottom-6 [@media(max-height:740px)]:bottom-4 inset-x-0 z-30 pointer-events-none flex justify-center">
-                <p className="text-white/40 text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase text-center">
+                <p className="text-white/80 text-[12px] md:text-sm font-semibold tracking-[0.2em] uppercase text-center">
                   Proud Member of CEO Club
                 </p>
               </div>

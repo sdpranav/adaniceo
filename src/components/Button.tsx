@@ -19,8 +19,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLLabelElement, ButtonPro
                 "bg-[#713B95] hover:bg-[#623282] text-white",
                 "rounded-2xl cursor-pointer group",
                 "border border-[#713B95] hover:border-[#8349aa]",
-                "transition-all duration-300",
-                "shadow-xl shadow-black/50",
+                "transition-all duration-300 active:scale-[0.98]",
+                "shadow-xl shadow-black/50 active:shadow-sm",
                 className
             )}
             {...props}

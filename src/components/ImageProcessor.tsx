@@ -132,12 +132,12 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
             <div className="flex-1 flex items-center justify-center min-h-0 w-full">
                 {/* 3:4 Container to match Hero Card Height (Prevents Layout Shift) */}
                 {/* Applied Hero Card Styling: Gradient, Border, Shadow, Rounded Corners */}
-                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[450px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[360px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
 
                     {/* Reset Button - Absolute Top Right */}
                     <button
                         onClick={onReset}
-                        className="absolute top-4 right-4 z-30 flex items-center gap-1.5 bg-black/20 hover:bg-black/40 text-white/60 hover:text-white px-3 py-1.5 rounded-full backdrop-blur-md transition-all border border-white/5 text-[10px] font-medium tracking-wide uppercase"
+                        className="absolute top-4 right-4 z-30 flex items-center gap-1.5 bg-black/20 hover:bg-black/40 text-white/60 hover:text-white px-3 py-1.5 rounded-full backdrop-blur-md transition-all border border-white/5 text-[10px] font-medium tracking-wide uppercase active:scale-90"
                     >
                         <RotateCcw className="w-3 h-3" />
                         <span>Reset</span>
