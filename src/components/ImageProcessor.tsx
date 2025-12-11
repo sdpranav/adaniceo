@@ -131,11 +131,21 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
             {/* Main Preview Area */}
             <div className="flex-1 flex items-center justify-center min-h-0 w-full">
                 {/* 3:4 Container to match Hero Card Height (Prevents Layout Shift) */}
-                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[450px] flex flex-col items-center justify-center">
+                {/* Applied Hero Card Styling: Gradient, Border, Shadow, Rounded Corners */}
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[450px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
 
-                    {/* Inner Square Content */}
+                    {/* Reset Button - Absolute Top Right */}
+                    <button
+                        onClick={onReset}
+                        className="absolute top-4 right-4 z-30 flex items-center gap-1.5 bg-black/20 hover:bg-black/40 text-white/60 hover:text-white px-3 py-1.5 rounded-full backdrop-blur-md transition-all border border-white/5 text-[10px] font-medium tracking-wide uppercase"
+                    >
+                        <RotateCcw className="w-3 h-3" />
+                        <span>Reset</span>
+                    </button>
+
+                    {/* Inner Square Content - Ring & Canvas */}
                     <div
-                        className="w-full aspect-square rounded-full overflow-hidden shadow-2xl border border-white/10 bg-black touch-none cursor-move shrink-0"
+                        className="w-full aspect-square rounded-full overflow-hidden shadow-2xl border border-white/10 bg-black touch-none cursor-move shrink-0 z-10"
                         onMouseDown={(e) => handleStart(e.clientX, e.clientY)}
                         onMouseMove={(e) => handleMove(e.clientX, e.clientY)}
                         onMouseUp={handleEnd}
@@ -162,10 +172,13 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
                     {/* Drag Hint - Inside the flex container */}
                     {!loading && (
-                        <div className="mt-4 [@media(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700">
+                        <div className="mt-4 [@media(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700 z-10">
                             <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-medium">Drag to Reposition</p>
                         </div>
                     )}
+
+                    {/* Card Gloss Effect - Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-20"></div>
                 </div>
             </div>
 
@@ -177,14 +190,6 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
                         <span className="font-semibold text-base md:text-lg">Download image</span>
                     </Button>
                 </div>
-
-                <button
-                    onClick={onReset}
-                    className="flex items-center gap-2 text-white/40 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
-                >
-                    <RotateCcw className="w-3.5 h-3.5" />
-                    <span>Reset</span>
-                </button>
             </div>
 
         </div>
