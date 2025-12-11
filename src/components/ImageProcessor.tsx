@@ -130,9 +130,12 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
             {/* Main Preview Area */}
             <div className="flex-1 flex items-center justify-center min-h-0 w-full">
-                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-square sm:max-w-[400px] md:w-full md:max-w-[450px]">
+                {/* 3:4 Container to match Hero Card Height (Prevents Layout Shift) */}
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[450px] flex flex-col items-center justify-center">
+
+                    {/* Inner Square Content */}
                     <div
-                        className="w-full h-full rounded-full overflow-hidden shadow-2xl border border-white/10 bg-black touch-none cursor-move"
+                        className="w-full aspect-square rounded-full overflow-hidden shadow-2xl border border-white/10 bg-black touch-none cursor-move shrink-0"
                         onMouseDown={(e) => handleStart(e.clientX, e.clientY)}
                         onMouseMove={(e) => handleMove(e.clientX, e.clientY)}
                         onMouseUp={handleEnd}
@@ -157,7 +160,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
                     </div>
 
-                    {/* Drag Hint - Now below the ring */}
+                    {/* Drag Hint - Inside the flex container */}
                     {!loading && (
                         <div className="mt-4 [@media(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700">
                             <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-medium">Drag to Reposition</p>
