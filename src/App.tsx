@@ -48,14 +48,14 @@ function App() {
       >
         {/* Left: Ambuja | ACC */}
         <div className="flex items-center gap-1 md:gap-1 p-1">
-          <img src={ambujaLogo} alt="Ambuja Cement" className="h-10 md:h-16 object-contain opacity-90" />
+          <img src={ambujaLogo} alt="Ambuja Cement" className="h-12 md:h-16 object-contain opacity-90" />
           <div className="w-px h-6 md:h-8 bg-white"></div>
-          <img src={accLogo} alt="ACC" className="h-10 md:h-16 object-contain opacity-90" />
+          <img src={accLogo} alt="ACC" className="h-12 md:h-16 object-contain opacity-90" />
         </div>
 
         {/* Right: Adani Cement */}
         <div className="p-1">
-          <img src={adaniLogo} alt="Adani Cement" className="h-10 md:h-16 object-contain opacity-90" />
+          <img src={adaniLogo} alt="Adani Cement" className="h-12 md:h-16 object-contain opacity-90" />
         </div>
       </div>
 
