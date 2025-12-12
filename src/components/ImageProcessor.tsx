@@ -126,13 +126,13 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
     }
 
     return (
-        <div className="w-full flex flex-col items-center gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 animate-in fade-in slide-in-from-bottom-8 duration-500">
+        <div className="w-full flex flex-col items-center gap-6 md:gap-12 [@media(max-width:767px)_and_(max-height:740px)]:gap-4 animate-in fade-in slide-in-from-bottom-8 duration-500">
 
             {/* Main Preview Area */}
             <div className="flex-1 flex items-center justify-center min-h-0 w-full">
                 {/* 3:4 Container to match Hero Card Height (Prevents Layout Shift) */}
                 {/* Applied Hero Card Styling: Gradient, Border, Shadow, Rounded Corners */}
-                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[360px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-width:767px)_and_(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[360px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
 
                     {/* Reset Button - Absolute Top Right */}
                     <button
@@ -172,7 +172,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
                     {/* Drag Hint - Inside the flex container */}
                     {!loading && (
-                        <div className="mt-4 [@media(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700 z-10">
+                        <div className="mt-4 [@media(max-width:767px)_and_(max-height:740px)]:mt-2 text-center animate-in fade-in duration-700 z-10">
                             <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-medium">Drag to Reposition</p>
                         </div>
                     )}
@@ -183,7 +183,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
             </div>
 
             {/* Controls Bar - Fixed Bottom on Mobile, Static on Desktop */}
-            <div className="fixed bottom-12 [@media(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex flex-col items-center gap-3 z-50 transition-all">
+            <div className="fixed bottom-12 [@media(max-width:767px)_and_(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex flex-col items-center gap-3 z-50 transition-all">
                 <div className="w-full md:max-w-[360px] relative group shrink-0">
                     <Button onClick={handleDownload} className="w-full">
                         <Download className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />

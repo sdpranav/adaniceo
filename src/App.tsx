@@ -47,9 +47,9 @@ function App() {
         )}
       >
         {/* Left: Ambuja | ACC */}
-        <div className="flex items-center gap-2 md:gap-2 p-1">
+        <div className="flex items-center gap-1 md:gap-1 p-1">
           <img src={ambujaLogo} alt="Ambuja Cement" className="h-10 md:h-16 object-contain opacity-90" />
-          <div className="w-px h-8 bg-white"></div>
+          <div className="w-px h-6 md:h-8 bg-white"></div>
           <img src={accLogo} alt="ACC" className="h-10 md:h-16 object-contain opacity-90" />
         </div>
 
@@ -59,35 +59,35 @@ function App() {
         </div>
       </div>
 
-      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 [@media(max-height:740px)]:pb-24">
+      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 gap-6 md:gap-12 [@media(max-width:767px)_and_(max-height:740px)]:gap-4 [@media(max-width:767px)_and_(max-height:740px)]:pb-24">
 
-        <header className="relative pt-16 md:pt-16 [@media(max-height:740px)]:pt-16 pb-8 md:pb-8 [@media(max-height:740px)]:pb-4 text-center space-y-4 [@media(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
+        <header className="relative pt-16 md:pt-16 [@media(max-width:767px)_and_(max-height:740px)]:pt-16 pb-8 md:pb-8 [@media(max-width:767px)_and_(max-height:740px)]:pb-4 text-center space-y-4 [@media(max-width:767px)_and_(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
           <div className="space-y-0.5">
             {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
               ADANI CEMENT CEO CLUB MEMBER
             </p>*/}
-            <h1 className="text-xl md:text-4xl [@media(max-height:740px)]:text-lg font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
+            <h1 className="text-xl md:text-4xl [@media(max-width:767px)_and_(max-height:740px)]:text-lg font-black tracking-tighter bg-gradient-to-b from-[#F1E9F6] to-[#DECCEB] bg-clip-text text-transparent drop-shadow-sm px-4">
               ADANI CEMENT CEO CLUB MEMBER
             </h1>
           </div>
-          <p className="text-white/80 text-sm md:text-md [@media(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
+          <p className="text-white/80 text-sm md:text-md [@media(max-width:767px)_and_(max-height:740px)]:text-[10px] font-light tracking-wide text-center leading-relaxed">
             The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.
           </p>
         </header>
 
         {!image ? (
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 [@media(max-height:740px)]:gap-4 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 [@media(max-width:767px)_and_(max-height:740px)]:gap-4 w-full max-w-lg md:max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
 
             {/* 3:4 Hero Card Container - Width-Based Scaling */}
             {/* Mobile: Width calc(100% - 48px) capped at 320px. Desktop: max 360px */}
             {/* Short Screen: Cap at 260px to prevent overlap */}
             <TiltCard
-              className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-height:740px)]:max-w-[260px] md:w-full md:max-w-[360px] aspect-[3/4] shrink-1 md:shrink-0 transition-all"
+              className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-width:767px)_and_(max-height:740px)]:max-w-[260px] md:w-full md:max-w-[360px] aspect-[3/4] shrink-1 md:shrink-0 transition-all"
               tiltClassName="bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl flex items-center justify-center p-6 overflow-hidden"
             >
 
               {/* Bottom Badge Text */}
-              <div className="absolute bottom-6 [@media(max-height:740px)]:bottom-4 inset-x-0 z-30 pointer-events-none flex justify-center">
+              <div className="absolute bottom-6 [@media(max-width:767px)_and_(max-height:740px)]:bottom-4 inset-x-0 z-30 pointer-events-none flex justify-center">
                 <p className="text-white/80 text-[12px] md:text-sm font-semibold tracking-[0.2em] uppercase text-center">
                   Proud Member of CEO Club
                 </p>
@@ -118,7 +118,7 @@ function App() {
             </TiltCard>
 
             {/* Upload Button */}
-            <div className="fixed bottom-12 [@media(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex justify-center z-50 transition-all">
+            <div className="fixed bottom-12 [@media(max-width:767px)_and_(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex justify-center z-50 transition-all">
               <div className="w-full md:max-w-[360px] relative group shrink-0">
                 <input
                   type="file"
@@ -134,10 +134,10 @@ function App() {
                 <Button
                   as="label"
                   htmlFor="image-upload"
-                  className="[@media(max-height:740px)]:h-10 [@media(max-height:740px)]:text-sm"
+                  className="[@media(max-width:767px)_and_(max-height:740px)]:h-10 [@media(max-width:767px)_and_(max-height:740px)]:text-sm"
                 >
-                  <Upload className="w-5 h-5 [@media(max-height:740px)]:w-4 [@media(max-height:740px)]:h-4 text-white/80 group-hover:text-white transition-colors" />
-                  <span className="font-semibold text-base md:text-lg [@media(max-height:740px)]:text-sm">Upload Photo</span>
+                  <Upload className="w-5 h-5 [@media(max-width:767px)_and_(max-height:740px)]:w-4 [@media(max-width:767px)_and_(max-height:740px)]:h-4 text-white/80 group-hover:text-white transition-colors" />
+                  <span className="font-semibold text-base md:text-lg [@media(max-width:767px)_and_(max-height:740px)]:text-sm">Upload Photo</span>
                 </Button>
               </div>
             </div>
