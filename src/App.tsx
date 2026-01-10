@@ -40,6 +40,7 @@ function App() {
         '--btn-hover': activeTemplate.theme.buttonHoverColor,
         '--btn-border': activeTemplate.theme.buttonBorder,
         '--btn-border-hover': activeTemplate.theme.buttonBorderHover,
+        '--selector-color': activeTemplate.theme.buttonColor,
       } as React.CSSProperties}
     >
 
@@ -101,7 +102,7 @@ function App() {
                 className={cn(
                   "relative w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-300 overflow-hidden",
                   activeTemplate.id === template.id
-                    ? "bg-white/10 ring-2 ring-white/50 scale-105 shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                    ? "bg-[var(--selector-color)]/20 ring-2 ring-[var(--selector-color)] scale-105 shadow-[0_0_15px_var(--selector-color)]"
                     : "hover:bg-white/5 opacity-60 hover:opacity-100 grayscale hover:grayscale-0"
                 )}
                 title={template.name}

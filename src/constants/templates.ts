@@ -1,6 +1,6 @@
 
-import adaniLogo from '../assets/ADANI-Cement.png'
-import ambujaLogo from '../assets/ambuja logo.png'
+import ceoClubLogo from '../assets/ceo club.png'
+import dhanvarshaLogo from '../assets/dhanvarsha.png'
 import ring1 from '../assets/ring.png'
 import ring2 from '../assets/ring2.png'
 
@@ -33,7 +33,7 @@ export const TEMPLATES: Template[] = [
     {
         id: 'ceo-club',
         name: 'CEO Club',
-        logoSrc: adaniLogo,
+        logoSrc: ceoClubLogo,
         frameSrc: ring1,
         headline: 'ADANI CEMENT CEO CLUB MEMBER',
         description: 'The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.',
@@ -55,7 +55,7 @@ export const TEMPLATES: Template[] = [
     {
         id: 'ambuja-club', // Naming it Ambuja Club for now as a placeholder
         name: 'Dhanvarsha Club',
-        logoSrc: ambujaLogo,
+        logoSrc: dhanvarshaLogo,
         frameSrc: ring2,
         headline: 'ADANI CEMENT DHANVARSHA CLUB MEMBER',
         description: 'The Adani Cement Dhanvarsha Club is the most inclusive recognition in the cement industry, rewarding our dealers for their outstanding contributions and motivating them to achieve new milestones.',
