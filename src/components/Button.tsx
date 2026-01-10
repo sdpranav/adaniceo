@@ -16,9 +16,9 @@ export const Button = forwardRef<HTMLButtonElement | HTMLLabelElement, ButtonPro
             ref={ref}
             className={cn(
                 "flex items-center justify-center gap-3 w-full py-3 md:py-4 px-6 md:px-8",
-                "bg-[#713B95] hover:bg-[#623282] text-white",
+                "bg-[var(--btn-color)] hover:bg-[var(--btn-hover)] text-white",
                 "rounded-2xl cursor-pointer group",
-                "border border-[#713B95] hover:border-[#8349aa]",
+                "border border-[var(--btn-border)] hover:border-[var(--btn-border-hover)]",
                 "transition-all duration-300 active:scale-[0.98]",
                 "shadow-xl shadow-black/50 active:shadow-sm",
                 className

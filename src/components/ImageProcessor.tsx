@@ -2,17 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { Download, RefreshCw, RotateCcw } from 'lucide-react'
 import { drawComposedImage, downloadCanvas, loadImage, getInitialScale } from '../utils/canvasUtils'
 import { Button } from './Button'
+import type { ThemeColors } from "../constants/templates";
 
 
-// Import ring asset
-import ringPath from '../assets/ring.png'
 
-interface ImageProcessorProps {
-    file: File
-    onReset: () => void
-}
 
-export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
+
+export function ImageProcessor({ file, onReset, frameSrc }: { file: File, onReset: () => void, frameSrc: string, theme: ThemeColors }) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const [loading, setLoading] = useState(false)
 
@@ -26,7 +22,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
 
     useEffect(() => {
         loadAssets()
-    }, [file])
+    }, [file, frameSrc])
 
     const loadAssets = async () => {
         const canvas = canvasRef.current
@@ -39,7 +35,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
             baseImageRef.current = baseImg
 
             // Load ring image
-            const ringImg = await loadImage(ringPath)
+            const ringImg = await loadImage(frameSrc)
             ringImageRef.current = ringImg
 
             // Initial Setup
@@ -132,7 +128,7 @@ export function ImageProcessor({ file, onReset }: ImageProcessorProps) {
             <div className="flex-1 flex items-center justify-center min-h-0 w-full">
                 {/* 3:4 Container to match Hero Card Height (Prevents Layout Shift) */}
                 {/* Applied Hero Card Styling: Gradient, Border, Shadow, Rounded Corners */}
-                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-width:767px)_and_(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[360px] flex flex-col items-center justify-center bg-gradient-to-br from-[#321A42] to-[#24132F] rounded-[2rem] border border-[#24132F] shadow-2xl p-6 overflow-hidden">
+                <div className="relative w-[calc(100%-48px)] max-w-[320px] [@media(max-width:767px)_and_(max-height:740px)]:max-w-[260px] aspect-[3/4] sm:max-w-[400px] md:w-full md:max-w-[360px] flex flex-col items-center justify-center bg-gradient-to-br from-[var(--card-from)] to-[var(--card-to)] rounded-[2rem] border border-[var(--card-border)] shadow-2xl p-6 overflow-hidden transition-colors duration-500">
 
                     {/* Reset Button - Absolute Top Right */}
                     <button
