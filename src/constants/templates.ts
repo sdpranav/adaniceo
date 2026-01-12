@@ -1,12 +1,13 @@
 
-import ceoClubLogo from '../assets/ceo club.png'
-import dhanvarshaLogo from '../assets/dhanvarsha.png'
-import kawachLogo from '../assets/kawach.png'
-import goldLogo from '../assets/gold.png'
-import ring1 from '../assets/ring.png'
-import ring2 from '../assets/ring2.png'
-import ring3 from '../assets/ring3.png'
-import ring4 from '../assets/ring4.png'
+
+import ceoClubLogo from '../assets/ceo club.webp'
+import dhanvarshaLogo from '../assets/dhanvarsha.webp'
+import kawachLogo from '../assets/kawach.webp'
+import goldLogo from '../assets/gold.webp'
+import ring1 from '../assets/ring.webp'
+import ring2 from '../assets/ring2.webp'
+import ring3 from '../assets/ring3.webp'
+import ring4 from '../assets/ring4.webp'
 
 export interface ThemeColors {
     background: string;
