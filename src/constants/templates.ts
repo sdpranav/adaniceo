@@ -1,8 +1,12 @@
 
 import ceoClubLogo from '../assets/ceo club.png'
 import dhanvarshaLogo from '../assets/dhanvarsha.png'
+import kawachLogo from '../assets/kawach.png'
+import goldLogo from '../assets/gold.png'
 import ring1 from '../assets/ring.png'
 import ring2 from '../assets/ring2.png'
+import ring3 from '../assets/ring3.png'
+import ring4 from '../assets/ring4.png'
 
 export interface ThemeColors {
     background: string;
@@ -72,6 +76,50 @@ export const TEMPLATES: Template[] = [
             buttonHoverColor: '#c2410c',
             buttonBorder: '#ea580c',
             buttonBorderHover: '#f97316',
+        }
+    },
+    {
+        id: 'kawach-club',
+        name: 'Kawach Club',
+        logoSrc: kawachLogo,
+        frameSrc: ring3,
+        headline: 'ADANI AMBUJA KAWACH',
+        description: 'A proud seller of Ambuja Kawach Cement, as it protects our homes with strength & resists water from seeping in.',
+        subtitle: 'PROUD SELLER OF AMBUJA KAWACH',
+        theme: {
+            background: '#0C1520',
+            cardGradientFrom: '#1A3A52',
+            cardGradientTo: '#132838',
+            cardBorder: '#132838',
+            textGradientFrom: '#E9F3F6',
+            textGradientTo: '#CCE5EB',
+            accentGlow: 'rgba(59, 130, 246, 0.3)',
+            buttonColor: '#2563eb',
+            buttonHoverColor: '#1d4ed8',
+            buttonBorder: '#2563eb',
+            buttonBorderHover: '#3b82f6',
+        }
+    },
+    {
+        id: 'gold-club',
+        name: 'Gold Club',
+        logoSrc: goldLogo,
+        frameSrc: ring4,
+        headline: 'ADANI ACC GOLD WATER SHIELD',
+        description: 'A proud seller of ACC Gold Water Shield Cement, as it protects our homes & stops seepage, due it its density & water-resistant feature.',
+        subtitle: 'PROUD SELLER OF ACC GOLD WATER SHIELD',
+        theme: {
+            background: '#1C0C0C',
+            cardGradientFrom: '#4A1A1A',
+            cardGradientTo: '#2F1313',
+            cardBorder: '#2F1313',
+            textGradientFrom: '#F6E9E9',
+            textGradientTo: '#EBCCCC',
+            accentGlow: 'rgba(239, 68, 68, 0.3)',
+            buttonColor: '#dc2626',
+            buttonHoverColor: '#b91c1c',
+            buttonBorder: '#dc2626',
+            buttonBorderHover: '#ef4444',
         }
     }
 ];
