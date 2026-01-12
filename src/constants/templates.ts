@@ -41,8 +41,8 @@ export const TEMPLATES: Template[] = [
         logoSrc: ceoClubLogo,
         frameSrc: ring1,
         headline: 'ADANI CEMENT CEO CLUB MEMBER',
-        description: 'The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, the ones who consistently deliver results and drive growth.',
-        subtitle: 'PROUD MEMBER OF CEO CLUB',
+        description: 'The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, who consistently deliver results and drive growth.',
+        subtitle: 'Proud Member of CEO Club',
         theme: {
             background: '#160C1D',
             cardGradientFrom: '#321A42',
@@ -62,8 +62,8 @@ export const TEMPLATES: Template[] = [
         name: 'Dhanvarsha Club',
         logoSrc: dhanvarshaLogo,
         frameSrc: ring2,
-        headline: 'ADANI CEMENT DHANVARSHA CLUB MEMBER',
-        description: 'The Adani Cement Dhanvarsha Club is the most inclusive recognition in the cement industry, rewarding our dealers for their outstanding contributions and motivating them to achieve new milestones.',
+        headline: 'ADANI CEMENT DHANVARSHA MEMBER',
+        description: 'Dhanvarsha is an industry-first initiative that recognises and rewards dealers for their contributions and hard work.',
         subtitle: 'PROUD BENEFICIARY OF DHANVARSHA',
         theme: {
             background: '#1D140C',
