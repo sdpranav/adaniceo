@@ -85,7 +85,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: kawachLogo,
         frameSrc: ring3,
         headline: 'ADANI AMBUJA KAWACH',
-        description: 'A proud seller of Ambuja Kawach Cement, as it protects our homes with strength & resists water from seeping in.',
+        description: 'A proud seller of Ambuja Kawach Cement, as it protects our homes with strength & stops water from seeping in.',
         subtitle: 'PROUD SELLER OF AMBUJA KAWACH',
         theme: {
             background: '#0C1520',
@@ -107,7 +107,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: goldLogo,
         frameSrc: ring4,
         headline: 'ADANI ACC GOLD WATER SHIELD',
-        description: 'A proud seller of ACC Gold Water Shield Cement, as it protects our homes & stops seepage, due it its density & water-resistant feature.',
+        description: 'A proud seller of ACC Gold Water Shield Cement, as it protects our homes & stops seepage, due it its density & water-repellent feature.',
         subtitle: 'PROUD SELLER OF ACC GOLD WATER SHIELD',
         theme: {
             background: '#1C0C0C',
