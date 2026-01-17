@@ -41,7 +41,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: ceoClubLogo,
         frameSrc: ring1,
         headline: 'ADANI CEMENT CEO CLUB MEMBER',
-        description: 'The Adani Cement CEO Club is an exclusive circle for our top-performing dealers, who consistently deliver results and drive growth.',
+        description: 'An exclusive circle for our top-performing dealers, who consistently deliver results.',
         subtitle: 'Proud Member of CEO Club',
         theme: {
             background: '#160C1D',
@@ -63,7 +63,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: dhanvarshaLogo,
         frameSrc: ring2,
         headline: 'ADANI CEMENT DHANVARSHA MEMBER',
-        description: 'Dhanvarsha is an industry-first initiative that recognises and rewards dealers for their contributions and hard work.',
+        description: 'An industry-first initiative that recognises and rewards dealers for their hardwork.',
         subtitle: 'PROUD BENEFICIARY OF DHANVARSHA',
         theme: {
             background: '#1D140C',
@@ -85,7 +85,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: kawachLogo,
         frameSrc: ring3,
         headline: 'ADANI AMBUJA KAWACH',
-        description: 'A proud seller of Ambuja Kawach Cement, as it protects our homes with strength & stops water from seeping in.',
+        description: 'A proud seller of Ambuja Kawach Cement which protects our homes with denser concrete & resists water from seeping in.',
         subtitle: 'PROUD SELLER OF AMBUJA KAWACH',
         theme: {
             background: '#0C1520',
@@ -107,7 +107,7 @@ export const TEMPLATES: Template[] = [
         logoSrc: goldLogo,
         frameSrc: ring4,
         headline: 'ADANI ACC GOLD WATER SHIELD',
-        description: 'A proud seller of ACC Gold Water Shield Cement, as it protects our homes & stops seepage, due it its density & water-repellent feature.',
+        description: 'A proud seller of ACC Gold Water Shield Cement which protects our homes from seepage with its water-resistant property.',
         subtitle: 'PROUD SELLER OF ACC GOLD WATER SHIELD',
         theme: {
             background: '#1C0C0C',

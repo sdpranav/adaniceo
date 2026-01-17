@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div
-      className="h-[100dvh] md:h-auto md:min-h-screen bg-[var(--bg-primary)] text-foreground flex flex-col items-center md:p-4 md:py-12 selection:bg-blue-500/30 overflow-hidden md:overflow-visible overflow-x-hidden relative transition-colors duration-700"
+      className="min-h-[100dvh] md:h-auto md:min-h-screen bg-[var(--bg-primary)] text-foreground flex flex-col items-center md:p-4 md:py-12 selection:bg-blue-500/30 overflow-y-auto md:overflow-visible overflow-x-hidden relative transition-colors duration-700"
       style={{
         '--bg-primary': activeTemplate.theme.background,
         '--card-from': activeTemplate.theme.cardGradientFrom,
@@ -50,15 +50,14 @@ function App() {
           "fixed top-0 inset-x-0 z-50 p-4 md:p-2 flex justify-between items-start transition-all duration-300",
           // Always present border to prevent layout shift (flicker)
           "border-b border-transparent",
-          // Mobile: Add blur and visibility on scroll (though scroll is disabled on mobile now)
-          // We can keep it or simplify. Since mobile is no-scroll, this might not trigger on body scroll, 
-          // but we'll leave logic for desktop or potential inner content. 
-          // Actually, for 100vh app-like feel, header usually sits on top.
-          isScrolled
-            ? "bg-[var(--bg-primary)]/80 backdrop-blur-md border-white/5"
-            : "",
-          // Desktop: Reset styles (no border/blur needed)
-          "md:bg-transparent md:backdrop-blur-none md:border-none",
+          // Mobile: Always have subtle blur
+          "bg-[var(--bg-primary)]/80 backdrop-blur-md border-white/5",
+          // Desktop: Reset styles (no border/blur needed unless scrolled) and only apply if scrolled if we wanted to keeps logic, 
+          // but for now keeping mobile consistent as requested. 
+          // Let's override for desktop if NOT scrolled:
+          !isScrolled && "md:bg-transparent md:backdrop-blur-none md:border-none",
+          // If scrolled on desktop, it will keep the mobile-like base classes.
+
           // Base interaction
           "pointer-events-none"
         )}
@@ -76,9 +75,11 @@ function App() {
         </div>
       </div>
 
-      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-28 md:pb-0 md:py-12 gap-6 md:gap-12 [@media(max-width:767px)_and_(max-height:740px)]:gap-4 [@media(max-width:767px)_and_(max-height:740px)]:pb-24">
+      <main className="w-full flex-1 flex flex-col items-center justify-center min-h-0 pb-32 md:pb-0 md:py-12 gap-6 md:gap-12 [@media(max-width:767px)_and_(max-height:740px)]:gap-4 [@media(max-width:767px)_and_(max-height:740px)]:pb-24">
 
-        <header className="relative pt-16 md:pt-16 [@media(max-width:767px)_and_(max-height:740px)]:pt-16 pb-4 md:pb-4 text-center space-y-4 [@media(max-width:767px)_and_(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
+        {/* Padding Top increased to clear fixed header + 32px gap. Header approx 80px? Let's use pt-32 or pt-36 + header offset */}
+        {/* Actually, let's just make it substantial. pt-28 seems reasonable for header clearance + gap. */}
+        <header className="relative pt-28 md:pt-16 [@media(max-width:767px)_and_(max-height:740px)]:pt-24 pb-4 md:pb-4 text-center space-y-4 [@media(max-width:767px)_and_(max-height:740px)]:space-y-2 shrink-0 px-4 z-20 max-w-2xl">
           <div className="space-y-0.5">
             {/*<p className="text-[#A984C7] text-[10px] md:text-sm font-medium tracking-wide uppercase">
               ADANI CEMENT CEO CLUB MEMBER
@@ -160,7 +161,7 @@ function App() {
             </TiltCard>
 
             {/* Upload Button */}
-            <div className="fixed bottom-12 [@media(max-width:767px)_and_(max-height:740px)]:bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex justify-center z-50 transition-all">
+            <div className="fixed bottom-8 left-0 right-0 px-6 md:static md:p-0 md:w-full flex justify-center z-50 transition-all">
               <div className="w-full md:max-w-[360px] relative group shrink-0">
                 <input
                   type="file"
