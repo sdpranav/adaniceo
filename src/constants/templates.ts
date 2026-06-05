@@ -5,7 +5,7 @@ import dhanvarshaLogo from '../assets/dhanvarsha.webp'
 import kawachLogo from '../assets/kawach.webp'
 import goldLogo from '../assets/gold.webp'
 import ring1 from '../assets/ring.webp'
-import ring2 from '../assets/ring2.webp'
+import ring5 from '../assets/ring5.webp'
 import ring3 from '../assets/ring3.webp'
 import ring4 from '../assets/ring4.webp'
 
@@ -61,9 +61,9 @@ export const TEMPLATES: Template[] = [
         id: 'ambuja-club', // Naming it Ambuja Club for now as a placeholder
         name: 'Dhanvarsha Club',
         logoSrc: dhanvarshaLogo,
-        frameSrc: ring2,
+        frameSrc: ring5,
         headline: 'ADANI CEMENT DHANVARSHA MEMBER',
-        description: 'An industry-first initiative that recognises and rewards dealers for their hardwork.',
+        description: 'Dhanversha is an industry first initiative that recognises and rewards channel partners, influencers and employees for their hard work and impact.',
         subtitle: 'PROUD BENEFICIARY OF DHANVARSHA',
         theme: {
             background: '#1D140C',
@@ -124,3 +124,27 @@ export const TEMPLATES: Template[] = [
         }
     }
 ];
+
+// Hidden — add to TEMPLATES array above to re-enable
+export const DANANDHAR_TEMPLATE: Template = {
+    id: 'danandhar',
+    name: 'Danandhar',
+    logoSrc: goldLogo, // TODO: replace with danandhar logo asset
+    frameSrc: ring4,   // TODO: replace with danandhar ring frame asset
+    headline: 'ADANI CEMENT DANANDHAR MEMBER',
+    description: 'A distinguished recognition for dealers who exemplify excellence and drive growth.',
+    subtitle: 'PROUD DANANDHAR MEMBER',
+    theme: {
+        background: '#1A1400',
+        cardGradientFrom: '#3D2E00',
+        cardGradientTo: '#261E00',
+        cardBorder: '#4A3800',
+        textGradientFrom: '#FFF0A0',
+        textGradientTo: '#C8960A',
+        accentGlow: 'rgba(212, 160, 23, 0.35)',
+        buttonColor: '#B8860B',
+        buttonHoverColor: '#9A700A',
+        buttonBorder: '#C8960A',
+        buttonBorderHover: '#D4A017',
+    }
+};
