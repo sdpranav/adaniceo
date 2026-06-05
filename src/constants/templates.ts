@@ -36,28 +36,6 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
     {
-        id: 'ceo-club',
-        name: 'CEO Club',
-        logoSrc: ceoClubLogo,
-        frameSrc: ring1,
-        headline: 'ADANI CEMENT CEO CLUB MEMBER',
-        description: 'An exclusive circle for our top-performing dealers, who consistently deliver results.',
-        subtitle: 'Proud Member of CEO Club',
-        theme: {
-            background: '#160C1D',
-            cardGradientFrom: '#321A42',
-            cardGradientTo: '#24132F',
-            cardBorder: '#24132F',
-            textGradientFrom: '#F1E9F6',
-            textGradientTo: '#DECCEB',
-            accentGlow: 'rgba(59, 130, 246, 0.2)', // Blue-500/20
-            buttonColor: '#713B95',
-            buttonHoverColor: '#623282',
-            buttonBorder: '#713B95',
-            buttonBorderHover: '#8349aa',
-        }
-    },
-    {
         id: 'ambuja-club', // Naming it Ambuja Club for now as a placeholder
         name: 'Dhanvarsha Club',
         logoSrc: dhanvarshaLogo,
@@ -77,6 +55,28 @@ export const TEMPLATES: Template[] = [
             buttonHoverColor: '#c2410c',
             buttonBorder: '#ea580c',
             buttonBorderHover: '#f97316',
+        }
+    },
+    {
+        id: 'ceo-club',
+        name: 'CEO Club',
+        logoSrc: ceoClubLogo,
+        frameSrc: ring1,
+        headline: 'ADANI CEMENT CEO CLUB MEMBER',
+        description: 'An exclusive circle for our top-performing dealers, who consistently deliver results.',
+        subtitle: 'Proud Member of CEO Club',
+        theme: {
+            background: '#160C1D',
+            cardGradientFrom: '#321A42',
+            cardGradientTo: '#24132F',
+            cardBorder: '#24132F',
+            textGradientFrom: '#F1E9F6',
+            textGradientTo: '#DECCEB',
+            accentGlow: 'rgba(59, 130, 246, 0.2)', // Blue-500/20
+            buttonColor: '#713B95',
+            buttonHoverColor: '#623282',
+            buttonBorder: '#713B95',
+            buttonBorderHover: '#8349aa',
         }
     },
     {
