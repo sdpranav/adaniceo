@@ -44,17 +44,17 @@ export const TEMPLATES: Template[] = [
         description: 'Dhanversha is an industry first initiative that recognises and rewards channel partners, influencers and employees for their hard work and impact.',
         subtitle: 'PROUD BENEFICIARY OF DHANVARSHA',
         theme: {
-            background: '#1D140C',
-            cardGradientFrom: '#422A1A',
-            cardGradientTo: '#2F1E13',
-            cardBorder: '#2F1E13',
-            textGradientFrom: '#F6F1E9',
-            textGradientTo: '#EBDECC',
-            accentGlow: 'rgba(249, 115, 22, 0.2)', // Orange-500/20
-            buttonColor: '#ea580c',
-            buttonHoverColor: '#c2410c',
-            buttonBorder: '#ea580c',
-            buttonBorderHover: '#f97316',
+            background: '#0E0812',
+            cardGradientFrom: '#2A1038',
+            cardGradientTo: '#1B0A26',
+            cardBorder: '#1B0A26',
+            textGradientFrom: '#F3EEF6',
+            textGradientTo: '#E2D0EC',
+            accentGlow: 'rgba(135, 54, 147, 0.25)',
+            buttonColor: '#7a2886',
+            buttonHoverColor: '#60156a',
+            buttonBorder: '#7a2886',
+            buttonBorderHover: '#9c50a5',
         }
     },
     {
