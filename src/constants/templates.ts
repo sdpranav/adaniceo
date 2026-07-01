@@ -1,5 +1,4 @@
 
-
 import ceoClubLogo from '../assets/ceo club.webp'
 import dhanvarshaLogo from '../assets/dhanvarsha.webp'
 import kawachLogo from '../assets/kawach.webp'
@@ -8,6 +7,8 @@ import ring1 from '../assets/ring.webp'
 import ring5 from '../assets/ring5.webp'
 import ring3 from '../assets/ring3.webp'
 import ring4 from '../assets/ring4.webp'
+import ring6 from '../assets/ring6.webp'
+import vijayathLogo from '../assets/vijaypath.webp'
 
 export interface ThemeColors {
     background: string;
@@ -33,6 +34,29 @@ export interface Template {
     subtitle: string;
     theme: ThemeColors;
 }
+
+export const DANANDHAR_TEMPLATE: Template = {
+    id: 'vijaypath',
+    name: 'Vijaypath',
+    logoSrc: vijayathLogo,
+    frameSrc: ring6,
+    headline: 'VIJAYPATH',
+    description: 'Vijaypath is an employee conference that honours the remarkable achievements of our field teams and empowers them to lead the path ahead.',
+    subtitle: 'PROUD VIJAYPATH MEMBER',
+    theme: {
+        background: '#120804',
+        cardGradientFrom: '#2D1005',
+        cardGradientTo: '#1C0A04',
+        cardBorder: '#1C0A04',
+        textGradientFrom: '#FFF0E0',
+        textGradientTo: '#FFD080',
+        accentGlow: 'rgba(240, 120, 30, 0.3)',
+        buttonColor: '#E07018',
+        buttonHoverColor: '#B85510',
+        buttonBorder: '#E07018',
+        buttonBorderHover: '#F09030',
+    }
+};
 
 export const TEMPLATES: Template[] = [
     {
@@ -122,29 +146,6 @@ export const TEMPLATES: Template[] = [
             buttonBorder: '#dc2626',
             buttonBorderHover: '#ef4444',
         }
-    }
+    },
+    DANANDHAR_TEMPLATE,
 ];
-
-// Hidden — add to TEMPLATES array above to re-enable
-export const DANANDHAR_TEMPLATE: Template = {
-    id: 'danandhar',
-    name: 'Danandhar',
-    logoSrc: goldLogo, // TODO: replace with danandhar logo asset
-    frameSrc: ring4,   // TODO: replace with danandhar ring frame asset
-    headline: 'ADANI CEMENT DANANDHAR MEMBER',
-    description: 'A distinguished recognition for dealers who exemplify excellence and drive growth.',
-    subtitle: 'PROUD DANANDHAR MEMBER',
-    theme: {
-        background: '#1A1400',
-        cardGradientFrom: '#3D2E00',
-        cardGradientTo: '#261E00',
-        cardBorder: '#4A3800',
-        textGradientFrom: '#FFF0A0',
-        textGradientTo: '#C8960A',
-        accentGlow: 'rgba(212, 160, 23, 0.35)',
-        buttonColor: '#B8860B',
-        buttonHoverColor: '#9A700A',
-        buttonBorder: '#C8960A',
-        buttonBorderHover: '#D4A017',
-    }
-};
